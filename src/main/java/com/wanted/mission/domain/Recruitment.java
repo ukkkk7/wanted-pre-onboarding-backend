@@ -1,12 +1,14 @@
 package com.wanted.mission.domain;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@NoArgsConstructor( access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Entity
 public class Recruitment {
 
@@ -31,8 +33,10 @@ public class Recruitment {
 
 
     @ManyToOne // Many = recruitment  one = company
-    @JoinColumn(name = "company_id") // foreign key (company_id) references member (company_id)
-    private Member member;
+    @JoinColumn(name = "company_id", nullable = false) // foreign key (company_id) references company (company_id)
+    private Company company;
+
 
 
 }
+
