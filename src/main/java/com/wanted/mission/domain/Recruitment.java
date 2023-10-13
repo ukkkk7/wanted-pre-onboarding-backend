@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @NoArgsConstructor( access = AccessLevel.PROTECTED)
@@ -37,6 +38,33 @@ public class Recruitment {
     private Company company;
 
 
+    public void updateFields(Map<String, String> fieldUpdates) {
+        for (Map.Entry<String, String> entry : fieldUpdates.entrySet()) {
+            String fieldName = entry.getKey();
+            String newValue = entry.getValue();
 
+            switch (fieldName) {
+                case "content":
+                    this.content = newValue;
+                    break;
+                case "stack":
+                    this.stack = newValue;
+                    break;
+                case "region":
+                    this.region = newValue;
+                    break;
+                case "country":
+                    this.country = newValue;
+                    break;
+                case "noticeDate":
+                    this.noticeDate = newValue;
+                    break;
+                case "position":
+                    this.position = newValue;
+                    break;
+
+            }
+
+        }
+    }
 }
-

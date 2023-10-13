@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RecruitmentDeleteDto {
+public class RecruitmentDto {
 
 
     private String region;
