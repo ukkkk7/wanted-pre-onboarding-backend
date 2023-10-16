@@ -2,12 +2,14 @@ package com.wanted.mission.controller;
 
 
 import com.wanted.mission.domain.Recruitment;
+import com.wanted.mission.dto.RecruitmentDetailDto;
 import com.wanted.mission.dto.RecruitmentDto;
 import com.wanted.mission.dto.RecruitmentSaveDto;
 import com.wanted.mission.dto.RecruitmentUpdateDto;
 import com.wanted.mission.service.RecruitmentService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -65,7 +67,32 @@ public class RecruitmentController {
 
         Recruitment resultData = recruitmentService.updateRecruit(recruitmentUpdateDto, id);
 
+
         return modelMapper.map(resultData, RecruitmentUpdateDto.class);
 
+
     }
+
+
+
+    @GetMapping("/detail/{id}")
+    public RecruitmentDetailDto detailRecruitment(@PathVariable("id") Long id){
+
+       return recruitmentService.detail(id);
+
+    }
+
+
+
+    @GetMapping("/search/{keyword}")
+    public List<RecruitmentDto> searchRecruitment(@PathVariable("keyword") String keyword){
+
+       return recruitmentService.search(keyword);
+
+    }
+
+
+
+
+
 }

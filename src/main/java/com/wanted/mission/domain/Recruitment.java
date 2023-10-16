@@ -1,5 +1,6 @@
 package com.wanted.mission.domain;
 
+import com.wanted.mission.dto.RecruitmentUpdateDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,34 +38,16 @@ public class Recruitment {
     @JoinColumn(name = "company_id", nullable = false) // foreign key (company_id) references company (company_id)
     private Company company;
 
-
-    public void updateFields(Map<String, String> fieldUpdates) {
-        for (Map.Entry<String, String> entry : fieldUpdates.entrySet()) {
-            String fieldName = entry.getKey();
-            String newValue = entry.getValue();
-
-            switch (fieldName) {
-                case "content":
-                    this.content = newValue;
-                    break;
-                case "stack":
-                    this.stack = newValue;
-                    break;
-                case "region":
-                    this.region = newValue;
-                    break;
-                case "country":
-                    this.country = newValue;
-                    break;
-                case "noticeDate":
-                    this.noticeDate = newValue;
-                    break;
-                case "position":
-                    this.position = newValue;
-                    break;
-
-            }
-
-        }
+    public void update(RecruitmentUpdateDto dto){
+        this.content = dto.getContent();
+        this.country = dto.getCountry();
+        this.stack = dto.getStack();
+        this.noticeDate = dto.getNoticeDate();
+        this.position = dto.getPosition();
+        this.region = dto.getRegion();
     }
+
+
+
+
 }
