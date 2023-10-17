@@ -39,12 +39,12 @@ public class Recruitment {
     private Company company;
 
     public void update(RecruitmentUpdateDto dto){
-        this.content = dto.getContent();
-        this.country = dto.getCountry();
-        this.stack = dto.getStack();
-        this.noticeDate = dto.getNoticeDate();
-        this.position = dto.getPosition();
-        this.region = dto.getRegion();
+        if(dto.getContent()!=null) this.content = dto.getContent();
+        if(dto.getCountry()!=null) this.country = dto.getCountry();
+        if(dto.getStack()!=null) this.stack = dto.getStack();
+        if(dto.getNoticeDate()!=null) this.noticeDate = dto.getNoticeDate();
+        if(dto.getPosition()!=null) this.position = dto.getPosition();
+        if(dto.getRegion()!=null) this.region = dto.getRegion();
     }
 
 

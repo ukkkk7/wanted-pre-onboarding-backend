@@ -17,10 +17,6 @@ public class ApplyInformation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
-
-    private String Date;
-
 
     @ManyToOne(fetch = FetchType.LAZY) // Many = applyInformation  one = member
     @JoinColumn(name = "member_id") // foreign key (member_id) references member (member_id)
