@@ -24,6 +24,7 @@ public class RecruitmentService {
 
     private final ModelMapper modelMapper;
 
+    //id로 채용공고 찾는 메소드
     public Recruitment findRecruitmentById(Long id){
         return recruitmentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Recruitment not found with id: " + id));
     };
@@ -44,20 +45,13 @@ public class RecruitmentService {
 
 
 
-    public Recruitment updateRecruit(RecruitmentUpdateDto recruitmentUpdateDto, Long id) {
+    public Recruitment updateRecruit(RecruitmentUpdateDto dto, Long id) {
 
 
        Recruitment updateRecruitment = findRecruitmentById(id);
 
-       updateRecruitment.update(recruitmentUpdateDto);
-/*
-        updateRecruitment.setContent(recruitment.getContent());
-        updateRecruitment.setCountry(recruitment.getCountry());
-        updateRecruitment.setRegion(recruitment.getRegion());
-        updateRecruitment.setStack(recruitment.getStack());
-        updateRecruitment.setNoticeDate(recruitment.getNoticeDate());
-        updateRecruitment.setPosition(recruitment.getPosition());
-*/
+       updateRecruitment.update(dto);
+
        return updateRecruitment;
 
     }

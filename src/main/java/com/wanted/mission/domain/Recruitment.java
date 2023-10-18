@@ -30,11 +30,11 @@ public class Recruitment {
     private String noticeDate;
 
 
-    @OneToMany(mappedBy = "recruitment")
+    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
     private List<ApplyInformation> applyInformations = new ArrayList<>();
 
 
-    @ManyToOne // Many = recruitment  one = company
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST) // Many = recruitment  one = company
     @JoinColumn(name = "company_id", nullable = false) // foreign key (company_id) references company (company_id)
     private Company company;
 

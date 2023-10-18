@@ -26,6 +26,7 @@ public class RecruitmentController {
     private final ModelMapper modelMapper;
 
 
+    //채용공고 추가
     @PostMapping("/add")
         public RecruitmentSaveDto createRecruitment(@RequestBody Recruitment recruitment) {
 
@@ -35,6 +36,7 @@ public class RecruitmentController {
     }
 
 
+    //채용공고 삭제
     @DeleteMapping("/delete/{id}")
     public String deleteRecruitment(@PathVariable("id") Long id){
 
@@ -46,6 +48,7 @@ public class RecruitmentController {
 
 
 
+    //채용공고 전체 조회
     @GetMapping("/list")
     public List<RecruitmentDto> getRecruitmentList(){
 
@@ -62,6 +65,7 @@ public class RecruitmentController {
     }
 
 
+    //채용공고 수정
     @PatchMapping("/update/{id}")
     public RecruitmentUpdateDto updateRecruitment(@PathVariable("id") Long id, RecruitmentUpdateDto recruitmentUpdateDto){
 
@@ -75,6 +79,7 @@ public class RecruitmentController {
 
 
 
+    //채용공고 상세페이지
     @GetMapping("/detail/{id}")
     public RecruitmentDetailDto detailRecruitment(@PathVariable("id") Long id){
 
@@ -84,6 +89,7 @@ public class RecruitmentController {
 
 
 
+    //채용공고 검색
     @GetMapping("/search/{keyword}")
     public List<RecruitmentDto> searchRecruitment(@PathVariable("keyword") String keyword){
 
