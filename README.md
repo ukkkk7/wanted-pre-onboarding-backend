@@ -81,7 +81,7 @@ DuplicateApplicationException: 이미 지원한 공고에 재지원 했을 때 �
 <img src="https://github.com/ukkkk7/Spring/assets/117158625/251d4a58-eedc-4d50-86a7-105fa8b8f5da" width="450" height="400"/><br><br><br>
 
 ### 채용공고 삭제
-<img src="https://github.com/ukkkk7/Spring/assets/117158625/251d4a58-eedc-4d50-86a7-105fa8b8f5da" width="450" height="400"/><br><br><br>
+<img src="https://github.com/ukkkk7/wanted-pre-onboarding-backend/assets/117158625/97b811c7-569f-4bb0-ba96-bdf051490f9c" width="450" height="400"/><br><br><br>
 
 ### 채용공고 전체 조회
 <img src="https://github.com/ukkkk7/Spring/assets/117158625/11da3472-8fba-4c4c-a0bc-18ab79805ac7" width="450" height="400"/><br><br><br>
